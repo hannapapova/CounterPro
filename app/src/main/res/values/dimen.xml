@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_view_name">35sp</dimen>
+    <dimen name="linear_layout_margins_vertical">25dp</dimen>
+    <dimen name="text_view_since">20sp</dimen>
+    <dimen name="text_view_since_margin">20dp</dimen>
+    <dimen name="button_width">55dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button_text_size">25sp</dimen>
+    <dimen name="button_padding">0dp</dimen>
+    <dimen name="text_view_counter">27sp</dimen>
+</resources>
