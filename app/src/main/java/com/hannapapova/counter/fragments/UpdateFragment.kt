@@ -3,15 +3,16 @@ package com.hannapapova.counter.fragments
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hannapapova.counter.R
 import com.hannapapova.counter.room.Item
-import com.hannapapova.counter.viewmodel.ItemViewModel
+import com.hannapapova.counter.tools.userInputIsCorrect
+import com.hannapapova.counter.viewModel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
-
 
 class UpdateFragment : Fragment() {
 
@@ -65,12 +66,12 @@ class UpdateFragment : Fragment() {
     private fun updateItem() {
         val newName = et_name.text.toString()
 
-        //TODO: Check if name et is not empty
-
-        val item = Item(args.currentItem.id, newName, args.currentItem.counter)
-
-        itemViewModel.updateItem(item)
-
-        findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        if(userInputIsCorrect(newName)){
+            val item = Item(args.currentItem.id, newName, args.currentItem.counter)
+            itemViewModel.updateItem(item)
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        } else{
+            Toast.makeText(context, getString(R.string.counter_without_name_toast), Toast.LENGTH_SHORT).show()
+        }
     }
 }

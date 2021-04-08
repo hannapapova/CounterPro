@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.hannapapova.counter.fragments.ListFragment"
-        android:label="List"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.hannapapova.counter.fragments.AddFragment"
-        android:label="Add"
+        android:label="@string/add_label"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.hannapapova.counter.fragments.UpdateFragment"
-        android:label="Update"
+        android:label="@string/update_counter"
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_listFragment"

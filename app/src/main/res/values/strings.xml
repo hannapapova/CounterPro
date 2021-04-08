@@ -4,7 +4,6 @@
     <string name="since_today">Since today</string>
     <string name="minus">-</string>
     <string name="plus">+</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="what_do_you_want_to_count">What do you want to count?</string>
     <string name="add">Add</string>
@@ -13,4 +12,8 @@
     <string name="delete">Delete</string>
     <string name="add_new_counter">Add new counter</string>
     <string name="delete_all_counters">Delete all counters</string>
+    <string name="no_counters_created_yet">No counters created yet</string>
+    <string name="counter_without_name_toast">"You can't create counter without name!"</string>
+    <string name="add_label">Add new counter</string>
+    <string name="update_counter">Update existing counter</string>
 </resources>

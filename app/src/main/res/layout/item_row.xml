@@ -1,88 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data>
-        <variable
-            name="item"
-            type="com.hannapapova.counter.room.Item" />
-    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/row_layout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/linear_layout_margins_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_name"
+                tools:text="Tea cups" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/linear_layout_margins_vertical"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/buttons_layout_margin_bottom">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/btn_decrease"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:padding="@dimen/button_padding"
+                android:text="@string/minus"
+                android:textSize="@dimen/button_text_size"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{item.name}}"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_view_name"/>
-
-                <!--            <TextView-->
-                <!--                android:id="@+id/tv_since"-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_marginStart="@dimen/text_view_since_margin"-->
-                <!--                android:text="@string/since_today"-->
-                <!--                android:textSize="@dimen/text_view_since"/>-->
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_counter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_counter"
+                tools:text="10" />
 
-                <Button
-                    android:id="@+id/btn_decrease"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_height"
-                    android:text="@string/minus"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/button_text_size"
-                    android:layout_weight="1"
-                    android:padding="@dimen/button_padding"/>
-
-                <TextView
-                    android:id="@+id/tv_counter"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="@dimen/text_view_counter"
-                    android:text="@{item.counter}"
-                    android:textColor="@color/black"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:id="@+id/btn_increase"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_height"
-                    android:text="@string/plus"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/button_text_size"
-                    android:layout_weight="1"
-                    android:padding="@dimen/button_padding"
-                    />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_increase"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:padding="@dimen/button_padding"
+                android:text="@string/plus"
+                android:textSize="@dimen/button_text_size"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

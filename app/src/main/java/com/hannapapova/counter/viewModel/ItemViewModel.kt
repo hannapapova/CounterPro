@@ -1,4 +1,4 @@
-package com.hannapapova.counter.viewmodel
+package com.hannapapova.counter.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

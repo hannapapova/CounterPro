@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.hannapapova.counter.R
 import com.hannapapova.counter.room.Item
-import com.hannapapova.counter.viewmodel.ItemViewModel
+import com.hannapapova.counter.viewModel.ItemViewModel
 import kotlinx.android.synthetic.main.item_row.view.*
 
 class ItemsAdapter(val viewModelStoreOwner: ViewModelStoreOwner) :
@@ -38,10 +38,12 @@ class ItemsAdapter(val viewModelStoreOwner: ViewModelStoreOwner) :
             }
 
             buttonDecrease.setOnClickListener {
-                val newCounter = item.counter - 1
-                notifyDataSetChanged()
-                val newItem = Item(item.id, item.name, newCounter)
-                itemViewModel.updateItem(newItem)
+                if (item.counter > 0) {
+                    val newCounter = item.counter - 1
+                    notifyDataSetChanged()
+                    val newItem = Item(item.id, item.name, newCounter)
+                    itemViewModel.updateItem(newItem)
+                }
             }
 
             buttonIncrease.setOnClickListener {

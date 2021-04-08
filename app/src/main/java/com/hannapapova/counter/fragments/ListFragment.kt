@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.hannapapova.counter.R
-import com.hannapapova.counter.viewmodel.ItemViewModel
+import com.hannapapova.counter.viewModel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
@@ -34,11 +34,12 @@ class ListFragment : Fragment() {
         val itemsAdapter = ItemsAdapter(this)
         recyclerView.adapter = itemsAdapter
 
-        itemViewModel.readAllData.observe(viewLifecycleOwner, Observer{
+        itemViewModel.readAllData.observe(viewLifecycleOwner, Observer {
             itemsAdapter.setData(it)
+            if (it.isEmpty()) {
+                tv_empty.visibility = View.VISIBLE
+            }
         })
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -63,11 +64,11 @@ class ListFragment : Fragment() {
         }
 
         builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Delete all counters?")
+        builder.setTitle("Are you sure you want to delete all counters?")
         builder.create().show()
     }
 
-    private fun addItem(){
+    private fun addItem() {
         findNavController().navigate(R.id.action_listFragment_to_addFragment)
     }
 }
