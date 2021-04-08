@@ -4,6 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -25,36 +28,12 @@ class MainActivity : AppCompatActivity() {
 
         setupFirebase()
 
-        loadData()
-        updateView()
-
-        btn_increase.setOnClickListener {
-            counter++
-            updateView()
-            saveData()
-        }
-
-        btn_decrease.setOnClickListener {
-            counter--
-            updateView()
-            saveData()
-        }
+        setupActionBarWithNavController(findNavController(R.id.fragment))
     }
 
-    private fun saveData() {
-        val sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putInt(COUNTER, tv_counter.text.toString().toInt())
-        editor.apply()
-    }
-
-    private fun loadData(){
-        val sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
-        counter = sharedPreferences.getInt(COUNTER, 0)
-    }
-
-    private fun updateView(){
-        tv_counter.text = counter.toString()
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     private fun setupFirebase(){
