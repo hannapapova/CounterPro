@@ -53,13 +53,13 @@ class UpdateFragment : Fragment() {
     private fun deleteItem() {
         val builder = AlertDialog.Builder(requireContext())
 
-        builder.setPositiveButton("Yes") { _, _ ->
+        builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             itemViewModel.deleteItem(args.currentItem)
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
 
-        builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Delete ${args.currentItem.name} counter?")
+        builder.setNegativeButton(getString(R.string.no)) { _, _ -> }
+        builder.setTitle("${getString(R.string.alert_delete_single_counter)} ${args.currentItem.name}?")
         builder.create().show()
     }
 

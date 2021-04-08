@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:text="@string/no_counters_created_yet"
         android:textSize="@dimen/text_view_empty"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/linear_layout_margins_vertical"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

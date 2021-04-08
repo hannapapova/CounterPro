@@ -59,12 +59,12 @@ class ListFragment : Fragment() {
     private fun deleteAll() {
         val builder = AlertDialog.Builder(requireContext())
 
-        builder.setPositiveButton("Yes") { _, _ ->
+        builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             itemViewModel.deleteAllItems()
         }
 
-        builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Are you sure you want to delete all counters?")
+        builder.setNegativeButton(getString(R.string.no)) { _, _ -> }
+        builder.setTitle(getString(R.string.alert_delete_all_counters))
         builder.create().show()
     }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Счётчик</string>
+    <string name="what_do_you_want_to_count">Как назовём счётчик?</string>
+    <string name="add">Добавить</string>
+    <string name="enter_new_counter_name">Введите новое имя счётчика</string>
+    <string name="update">Обновить</string>
+    <string name="delete">Удалить</string>
+    <string name="add_new_counter">Добавить новый счётчик</string>
+    <string name="delete_all_counters">Удалить все счётчики</string>
+    <string name="no_counters_created_yet">Вы не создали ни одного счётчика</string>
+    <string name="counter_without_name_toast">Нельзя создать счётчик без имени!</string>
+    <string name="add_label">Добавление счётчика</string>
+    <string name="update_counter">Обновление счётчика</string>
+    <string name="alert_delete_all_counters">Уверены, что хотите удалить все счётчики?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="alert_delete_single_counter">Удалить счётчик</string>
+</resources>
