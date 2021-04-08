@@ -26,13 +26,13 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_view_name"/>
 
-            <TextView
-                android:id="@+id/tv_since"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/text_view_since_margin"
-                android:text="@string/since_today"
-                android:textSize="@dimen/text_view_since"/>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_since"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/text_view_since_margin"-->
+<!--                android:text="@string/since_today"-->
+<!--                android:textSize="@dimen/text_view_since"/>-->
 
         </LinearLayout>
 
@@ -42,14 +42,14 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btn_decrease"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
                 android:text="@string/minus"
                 android:textStyle="bold"
                 android:textSize="@dimen/button_text_size"
                 android:layout_weight="1"
-                android:padding="@dimen/button_padding"
-                />
+                android:padding="@dimen/button_padding"/>
 
             <TextView
                 android:id="@+id/tv_counter"
@@ -62,6 +62,7 @@
                 android:layout_weight="1"/>
 
             <Button
+                android:id="@+id/btn_increase"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
                 android:text="@string/plus"
