@@ -6,74 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <fragment
+        android:id="@+id/fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/linear_layout_margins_vertical"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tea_cups"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_view_name"/>
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_since"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/text_view_since_margin"-->
-<!--                android:text="@string/since_today"-->
-<!--                android:textSize="@dimen/text_view_since"/>-->
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_decrease"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:text="@string/minus"
-                android:textStyle="bold"
-                android:textSize="@dimen/button_text_size"
-                android:layout_weight="1"
-                android:padding="@dimen/button_padding"/>
-
-            <TextView
-                android:id="@+id/tv_counter"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="@dimen/text_view_counter"
-                tools:text="100500"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <Button
-                android:id="@+id/btn_increase"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:text="@string/plus"
-                android:textStyle="bold"
-                android:textSize="@dimen/button_text_size"
-                android:layout_weight="1"
-                android:padding="@dimen/button_padding"
-                />
-
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/counter_nav"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
