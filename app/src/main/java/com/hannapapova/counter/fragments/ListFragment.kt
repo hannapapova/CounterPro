@@ -3,6 +3,7 @@ package com.hannapapova.counter.fragments
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.isNotEmpty
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -35,11 +36,17 @@ class ListFragment : Fragment() {
         recyclerView.adapter = itemsAdapter
 
         itemViewModel.readAllData.observe(viewLifecycleOwner, Observer {
-            itemsAdapter.setData(it)
             if (it.isEmpty()) {
                 tv_empty.visibility = View.VISIBLE
+            } else{
+                tv_empty.visibility = View.GONE
             }
+            itemsAdapter.setData(it)
         })
+
+        fab_add.setOnClickListener {
+            addItem()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -49,9 +56,6 @@ class ListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_delete_all) {
             deleteAll()
-        }
-        if (item.itemId == R.id.menu_add) {
-            addItem()
         }
         return super.onOptionsItemSelected(item)
     }

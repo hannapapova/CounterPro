@@ -10,20 +10,31 @@
         android:id="@+id/rv_counters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/no_counters_created_yet"
-        android:textSize="@dimen/text_view_empty"
         android:gravity="center"
         android:paddingHorizontal="@dimen/linear_layout_margins_vertical"
+        android:text="@string/no_counters_created_yet"
+        android:textSize="@dimen/text_view_empty"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_new_counter"
+        android:src="@drawable/ic_add"
+        android:layout_marginBottom="@dimen/fab_margins"
+        android:layout_marginEnd="@dimen/fab_margins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

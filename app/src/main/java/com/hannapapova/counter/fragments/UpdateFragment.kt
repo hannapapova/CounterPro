@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hannapapova.counter.R
 import com.hannapapova.counter.room.Item
+import com.hannapapova.counter.tools.fragmentHideKeyboard
 import com.hannapapova.counter.tools.userInputIsCorrect
 import com.hannapapova.counter.viewModel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
@@ -36,6 +37,7 @@ class UpdateFragment : Fragment() {
 
         btn_update.setOnClickListener {
             updateItem()
+            fragmentHideKeyboard(requireContext(), view)
         }
     }
 
