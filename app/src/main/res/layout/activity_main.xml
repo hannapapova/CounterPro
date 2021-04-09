@@ -8,11 +8,21 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/counter_nav"
-        />
+        app:layout_constraintBottom_toTopOf="@id/ad_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/counter_nav" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1689344717564332/4605501754"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
