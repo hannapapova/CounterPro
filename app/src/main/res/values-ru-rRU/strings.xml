@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Счётчик</string>
-    <string name="what_do_you_want_to_count">Как назовём счётчик?</string>
+    <string name="what_do_you_want_to_count">Что будем считать?</string>
     <string name="add">Добавить</string>
     <string name="enter_new_counter_name">Введите новое имя счётчика</string>
     <string name="update">Обновить</string>
