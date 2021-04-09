@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.hannapapova.counter.R
 import com.hannapapova.counter.room.Item
+import com.hannapapova.counter.tools.fragmentHideKeyboard
 import com.hannapapova.counter.tools.userInputIsCorrect
 import com.hannapapova.counter.viewModel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
@@ -32,6 +33,7 @@ class AddFragment : Fragment() {
 
         btn_add.setOnClickListener {
             insertDataToDatabase()
+            fragmentHideKeyboard(requireContext(), view)
         }
     }
 
