@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Counter)
         setContentView(R.layout.activity_main)
+
+        // Initializing the Mobile Ads SDK with AdMob ID
+        MobileAds.initialize(this){}
+
+        val adRequest = AdRequest.Builder().build()
+        ad_view.loadAd(adRequest)
 
         setupFirebase()
 
