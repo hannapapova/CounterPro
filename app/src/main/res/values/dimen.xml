@@ -10,7 +10,6 @@
     <dimen name="button_padding">0dp</dimen>
     <dimen name="text_view_counter">27sp</dimen>
     <dimen name="edit_text_name_margins_horizontal">20dp</dimen>
-    <dimen name="edit_text_name_margin_top">150dp</dimen>
-    <dimen name="button_add_margin_top">20dp</dimen>
+    <dimen name="edit_text_name_margin_bottom">20dp</dimen>
     <dimen name="text_view_empty">30sp</dimen>
 </resources>
