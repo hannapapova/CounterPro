@@ -58,6 +58,7 @@ class UpdateFragment : Fragment() {
         builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             itemViewModel.deleteItem(args.currentItem)
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            view?.let { fragmentHideKeyboard(requireContext(), it) }
         }
 
         builder.setNegativeButton(getString(R.string.no)) { _, _ -> }
