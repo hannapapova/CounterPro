@@ -40,6 +40,10 @@ class ListFragment : Fragment() {
                 tv_empty.visibility = View.VISIBLE
             }
         })
+
+        fab_add.setOnClickListener {
+            addItem()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -49,9 +53,6 @@ class ListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_delete_all) {
             deleteAll()
-        }
-        if (item.itemId == R.id.menu_add) {
-            addItem()
         }
         return super.onOptionsItemSelected(item)
     }

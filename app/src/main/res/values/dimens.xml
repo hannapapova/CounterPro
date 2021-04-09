@@ -2,4 +2,5 @@
 <resources>
     <dimen name="row_layout_margin_top">5dp</dimen>
     <dimen name="buttons_layout_margin_bottom">5dp</dimen>
+    <dimen name="fab_margins">24dp</dimen>
 </resources>
